@@ -39,10 +39,19 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextField(
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
+          Container(
+            margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                  color: Color(0xff101617).withOpacity(0.11),
+                  blurRadius: 40,
+                  spreadRadius: 0.0)
+            ]),
+            child: TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+              ),
             ),
           )
         ],
