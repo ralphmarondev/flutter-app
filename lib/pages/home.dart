@@ -13,6 +13,21 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           _searchField(),
+          SizedBox(
+            height: 40,
+          ),
+          Column(
+            children: [
+              Text(
+                'Category',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
@@ -33,7 +48,7 @@ class HomePage extends StatelessWidget {
             fillColor: Colors.white,
             contentPadding: const EdgeInsets.all(15),
             hintText: 'Search Pancake',
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               color: Color(0xffDDDADA),
               fontSize: 14,
             ),
@@ -52,7 +67,7 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    VerticalDivider(
+                    const VerticalDivider(
                       color: Colors.black,
                       indent: 10, // notes: create space top
                       endIndent: 10, // notes: create space bottom
