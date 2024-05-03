@@ -1,9 +1,19 @@
+import "dart:js_interop";
+
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
 import "package:flutter_svg/flutter_svg.dart";
 
+import "../models/category_model.dart";
+
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  List<CategoryModel> categories = [];
+
+  void _getCategories() {
+    categories = CategoryModel.getCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,20 +21,35 @@ class HomePage extends StatelessWidget {
       appBar: appBar(),
       backgroundColor: Colors.white,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _searchField(),
           SizedBox(
             height: 40,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Category',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Category',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 150,
+                color: Colors.green,
+                child: ListView.builder(itemBuilder: (context, index) {
+                  return Container();
+                }),
               )
             ],
           )
