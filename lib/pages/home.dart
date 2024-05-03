@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
           margin: EdgeInsets.all(10),
           alignment: Alignment.center,
           child: SvgPicture.asset(
-            'assets/icons/Search.svg',
+            'assets/icons/arrow_left2.svg',
             height: 20,
             width: 20,
           ),
@@ -35,6 +35,16 @@ class HomePage extends StatelessWidget {
             onTap: () {},
             child: newMethod(),
           ),
+        ],
+      ),
+      body: Column(
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+            ),
+          )
         ],
       ),
     );
