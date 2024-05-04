@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// TODO: Make this interactive, accept user input on buttons
 class BuildLayoutApp extends StatelessWidget {
   const BuildLayoutApp({super.key});
 
@@ -15,6 +16,7 @@ class BuildLayoutApp extends StatelessWidget {
         body: const SingleChildScrollView(
           child: Column(
             children: [
+              ImageSection(image: 'images/lake.jpg'),
               TitleSection(
                 name: 'Oeschinen Lake Campground',
                 location: 'Kandersteg, Switzerland',
@@ -29,7 +31,25 @@ class BuildLayoutApp extends StatelessWidget {
                     'and pine forest, leads you to the lake, which warms to 20 '
                     'degrees Celsius in the summer. Activities enjoyed here '
                     'includes rowing, and riding the summer toboggan run.',
-              )
+              ),
+              Padding(padding: EdgeInsets.only(top: 50)),
+              //? Second post
+              ImageSection(image: 'images/lake.jpg'),
+              TitleSection(
+                name: 'Oeschinen Lake Campground',
+                location: 'Kandersteg, Switzerland',
+              ),
+              ButtonSection(),
+              TextSection(
+                description:
+                    'Lake Oeaschinen lies at the foot of the Bluemlisalp in the '
+                    'Bernese Alps. Situated 1, 578 meters above sea level, it '
+                    'is one of the larger Alphine Lakes. A gondola ride from '
+                    'Kandersteg, followed by a half-hour walk through pastures '
+                    'and pine forest, leads you to the lake, which warms to 20 '
+                    'degrees Celsius in the summer. Activities enjoyed here '
+                    'includes rowing, and riding the summer toboggan run.',
+              ),
             ],
           ),
         ),
@@ -174,6 +194,25 @@ class TextSection extends StatelessWidget {
         description,
         softWrap: true,
       ),
+    );
+  }
+}
+
+class ImageSection extends StatelessWidget {
+  const ImageSection({
+    super.key,
+    required this.image,
+  });
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      image,
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover,
     );
   }
 }
