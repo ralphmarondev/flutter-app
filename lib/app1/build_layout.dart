@@ -20,6 +20,16 @@ class BuildLayoutApp extends StatelessWidget {
                 location: 'Kandersteg, Switzerland',
               ),
               ButtonSection(),
+              TextSection(
+                description:
+                    'Lake Oeaschinen lies at the foot of the Bluemlisalp in the '
+                    'Bernese Alps. Situated 1, 578 meters above sea level, it '
+                    'is one of the larger Alphine Lakes. A gondola ride from '
+                    'Kandersteg, followed by a half-hour walk through pastures '
+                    'and pine forest, leads you to the lake, which warms to 20 '
+                    'degrees Celsius in the summer. Activities enjoyed here '
+                    'includes rowing, and riding the summer toboggan run.',
+              )
             ],
           ),
         ),
@@ -143,6 +153,27 @@ class ButtonWithText extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+// Adding text section
+class TextSection extends StatelessWidget {
+  const TextSection({
+    super.key,
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32),
+      child: Text(
+        description,
+        softWrap: true,
+      ),
     );
   }
 }
